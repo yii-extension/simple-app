@@ -8,7 +8,7 @@
 
 [![Total Downloads](https://poser.pugx.org/yii-extension/simple-app/downloads.png)](https://packagist.org/packages/yii-extension/simple-app)
 [![Build Status](https://github.com/yii-extension/simple-app/workflows/build/badge.svg)](https://github.com/yii-extension/simple-app/actions?query=workflow%3Abuild)
-[![codecov](https://codecov.io/gh/yii-extension/simple-app/branch/main/graph/badge.svg?token=KB6T5KMGED)](https://codecov.io/gh/yii-extension/simple-app)
+[![codecov](https://codecov.io/gh/yii-extension/simple-app/branch/master/graph/badge.svg?token=GLO748TP63)](https://codecov.io/gh/yii-extension/simple-app)
 [![static analysis](https://github.com/yii-extension/simple-app/workflows/static%20analysis/badge.svg)](https://github.com/yii-extension/simple-app/actions?query=workflow%3A%22static+analysis%22)
 
 
