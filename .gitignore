@@ -24,9 +24,18 @@ composer.phar
 
 # phpunit itself is not needed
 phpunit.phar
+
 # local phpunit config
 /phpunit.xml
+
 # phpunit cache
 .phpunit.result.cache
 
+# node_modules
+/node_modules
 
+# config
+/config/packages
+
+# codeception
+c3.php
