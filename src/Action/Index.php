@@ -6,7 +6,6 @@ namespace Simple\App\Action;
 
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
-use Yiisoft\Yii\View\ViewRenderer;
 
 final class Index
 {
