@@ -56,10 +56,15 @@ final class ApplicationRunner
 
         $container = $container->get(ContainerInterface::class);
 
+        /** @var Application */
         $application = $container->get(Application::class);
 
-        $request = $container->get(ServerRequestFactory::class)->createFromGlobals();
-        $request = $request->withAttribute('applicationStartTime', $startTime);
+        /**
+         * @var ServerRequestInterface
+         * @psalm-suppress MixedMethodCall
+         */
+        $serverRequest = $container->get(ServerRequestFactory::class)->createFromGlobals();
+        $request = $serverRequest->withAttribute('applicationStartTime', $startTime);
 
         try {
             $application->start();
@@ -67,6 +72,10 @@ final class ApplicationRunner
             $this->emit($request, $response);
         } catch (Throwable $throwable) {
             $handler = new ThrowableHandler($throwable);
+            /**
+             * @var ResponseInterface
+             * @psalm-suppress MixedMethodCall
+             */
             $response = $container->get(ErrorCatcher::class)->process($request, $handler);
             $this->emit($request, $response);
         } finally {
