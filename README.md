@@ -12,34 +12,58 @@
 [![static analysis](https://github.com/yii-extension/simple-app/workflows/static%20analysis/badge.svg)](https://github.com/yii-extension/simple-app/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yii-extension/user-view-bootstrap5/coverage.svg)](https://shepherd.dev/github/yii-extension/user-view-bootstrap5)
 
+## Directory structure
+
+      config/             contains application configurations
+      src/                application directory
+          Action          contains action classes
+          Handler         contains handlers classes
+
 ## Installation
+
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+
+You can then install this project template using the following command:
 
 ```shell
 composer create-project --prefer-dist --stability dev yii-extension/simple-app <your project>
 ```
 
-### Unit testing
+Now you should be able to access the application through the following URL, assuming `app` is the directory
+directly under the `public` root.
 
-The package is tested with [PHPUnit](https://phpunit.de/). To run tests:
+## Configuring your application
+
+All the configuration is in the `config directory` of the `application`.
+
+## Using PHP built-in server
 
 ```shell
-./vendor/bin/phpunit
+php -S 127.0.0.1:8080 -t public
 ```
 
-### Mutation testing
+## Wait till it is up, then open the following URL in your browser
 
-The package tests are checked with [Infection](https://infection.github.io/) mutation framework. To run it:
+~~~
+http://localhost:8080
+~~~
+
+## Codeception testing
+
+The package is tested with [Codeception](https://github.com/Codeception/Codeception). To run tests:
 
 ```shell
-./vendor/bin/infection
+php -S 127.0.0.1:8080 -t public > yii.log 2>&1 &
+vendor/bin/codecept run
 ```
 
-### Static analysis
+## Static analysis
 
-The code is statically analyzed with [Phan](https://github.com/phan/phan/wiki). To run static analysis:
+The code is statically analyzed with [Psalm](https://psalm.dev/docs). To run static analysis:
 
 ```shell
-./vendor/bin/phan
+./vendor/bin/psalm
 ```
 
 ### License
