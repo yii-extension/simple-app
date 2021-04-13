@@ -47,6 +47,7 @@ final class ApplicationRunner
             '/config/packages', // Configs path.
         );
 
+        /** @psalm-suppress MixedArgumentTypeCoercion */
         $container = new Container($config->get('web'), $config->get('providers-web'));
 
         // Register error handler with real container-configured dependencies.
