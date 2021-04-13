@@ -24,6 +24,7 @@
         "yiisoft/log-target-file": "^1.0.0",
         "yiisoft/router-fastroute": "^3.0@dev",
         "yiisoft/session": "^1.0.1",
+        "yiisoft/yii-console": "^3.0@dev",
         "yiisoft/yii-web": "^3.0@dev"
     },
     "require-dev": {

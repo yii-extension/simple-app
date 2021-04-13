@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Simple\App\Command\Hello;
+
 return [
     'yiisoft/aliases' => [
         'aliases' => [
@@ -14,6 +16,12 @@ return [
             '@resources' => '@root/resources',
             '@runtime' => '@root/runtime',
             '@views' => '@resources/views',
+        ],
+    ],
+
+    'yiisoft/yii-console' => [
+        'commands' => [
+            'hello' => Hello::class,
         ],
     ],
 ];
