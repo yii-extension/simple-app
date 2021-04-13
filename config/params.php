@@ -16,6 +16,7 @@ return [
             '@resources' => '@root/resources',
             '@runtime' => '@root/runtime',
             '@views' => '@resources/views',
+            '@vendor' => '@root/vendor',
         ],
     ],
 
