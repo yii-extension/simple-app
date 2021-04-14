@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Simple\App\Action\Index;
+use Simple\App\Action\Home;
 use Yiisoft\Router\Route;
 
 return [
-    Route::get('/')->action([Index::class, 'run'])->name('index'),
+    Route::get('/')->action([Home::class, 'run'])->name('home'),
 ];

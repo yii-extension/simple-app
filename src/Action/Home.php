@@ -7,7 +7,7 @@ namespace Simple\App\Action;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 
-final class Index
+final class Home
 {
     public function run(ResponseFactoryInterface $responseFactory): ResponseInterface
     {
