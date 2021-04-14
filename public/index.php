@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simple\App\ApplicationRunner;
+use Simple\App\Runner\ApplicationRunner;
 
 // PHP built-in server routing.
 if (PHP_SAPI === 'cli-server') {

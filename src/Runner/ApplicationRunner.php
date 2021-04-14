@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simple\App;
+namespace Simple\App\Runner;
 
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\RequestInterface;
@@ -44,7 +44,7 @@ final class ApplicationRunner
         $this->registerErrorHandler($errorHandler);
 
         $config = new Config(
-            dirname(__DIR__),
+            dirname(__DIR__, 2),
             '/config/packages', // Configs path.
         );
 

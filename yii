@@ -3,7 +3,7 @@
 
 declare(strict_types=1);
 
-use Simple\App\ApplicationConsoleRunner;
+use Simple\App\Runner\ApplicationConsoleRunner;
 
 define('YII_ENV', getenv('env') ?? 'production');
 

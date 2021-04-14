@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simple\App\ApplicationRunner;
+use Simple\App\Runner\ApplicationRunner;
 
 $c3 = dirname(__DIR__) . '/c3.php';
 
