@@ -9,6 +9,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\NullLogger;
+use Simple\App\Handler\ThrowableHandler;
 use Throwable;
 use Yiisoft\Config\Config;
 use Yiisoft\Di\Container;
@@ -16,10 +17,10 @@ use Yiisoft\ErrorHandler\ErrorHandler;
 use Yiisoft\ErrorHandler\Middleware\ErrorCatcher;
 use Yiisoft\ErrorHandler\Renderer\HtmlRenderer;
 use Yiisoft\Http\Method;
+use Yiisoft\Yii\Event\ListenerConfigurationChecker;
 use Yiisoft\Yii\Web\Application;
 use Yiisoft\Yii\Web\SapiEmitter;
 use Yiisoft\Yii\Web\ServerRequestFactory;
-use Simple\App\Handler\ThrowableHandler;
 
 use function microtime;
 
@@ -54,6 +55,10 @@ final class ApplicationRunner
         $this->registerErrorHandler($container->get(ErrorHandler::class), $errorHandler);
 
         $container = $container->get(ContainerInterface::class);
+
+        if ($this->debug) {
+            $container->get(ListenerConfigurationChecker::class)->check($config->get('events-web'));
+        }
 
         /** @var Application */
         $application = $container->get(Application::class);
