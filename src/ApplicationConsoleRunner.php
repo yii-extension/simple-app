@@ -22,14 +22,15 @@ final class ApplicationConsoleRunner
             '/config/packages', // Configs path.
         );
 
+        /** @psalm-suppress MixedArgumentTypeCoercion */
         $container = new Container(
             $config->get('console'),
             $config->get('providers-console')
         );
 
-        /** @var ContainerInterface $container */
         $container = $container->get(ContainerInterface::class);
 
+        /** @var Application */
         $application = $container->get(Application::class);
         $exitCode = 1;
 

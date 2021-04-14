@@ -57,6 +57,7 @@ final class ApplicationRunner
         $container = $container->get(ContainerInterface::class);
 
         if ($this->debug) {
+            /** @psalm-suppress MixedMethodCall */
             $container->get(ListenerConfigurationChecker::class)->check($config->get('events-web'));
         }
 
