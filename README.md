@@ -14,10 +14,16 @@
 
 ## Directory structure
 
-      config/             contains application configurations
+      config/             application directory configurations
+          common          contains common config local classes
+          packages        contains config module/extension packages classes
+          web             contains web config local classes
+          
       src/                application directory
           Action          contains action classes
+          Command         contains command console classes
           Handler         contains handlers classes
+          Runner          contains runner classes
 
 ## Installation
 
