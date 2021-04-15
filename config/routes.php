@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Simple\App\Action\Home;
+use Simple\App\Action\HomeAction;
 use Yiisoft\Router\Route;
 
 return [
-    Route::get('/')->action([Home::class, 'run'])->name('home'),
+    Route::get('/')->action([HomeAction::class, 'run'])->name('home'),
 ];

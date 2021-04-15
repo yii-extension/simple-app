@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simple\App\Command\Hello;
+use Simple\App\Command\HelloCommand;
 
 return [
     'yiisoft/aliases' => [
@@ -22,7 +22,7 @@ return [
 
     'yiisoft/yii-console' => [
         'commands' => [
-            'hello' => Hello::class,
+            'hello' => HelloCommand::class,
         ],
     ],
 ];
