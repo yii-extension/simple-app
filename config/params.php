@@ -12,7 +12,7 @@ return [
             '@assetsUrl' => '/assets',
             '@npm' => '@root/node_modules',
             '@public' => '@root/public',
-            '@resources' => '@root/resources',
+            '@storage' => '@root/storage',
             '@runtime' => '@root/runtime',
             '@vendor' => '@root/vendor',
         ],
