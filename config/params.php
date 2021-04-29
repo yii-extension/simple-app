@@ -13,6 +13,7 @@ return [
             '@npm' => '@root/node_modules',
             '@public' => '@root/public',
             '@storage' => '@root/storage',
+            '@resources' => '@root/resources',
             '@runtime' => '@root/runtime',
             '@vendor' => '@root/vendor',
         ],
