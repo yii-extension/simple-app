@@ -11,6 +11,7 @@
 [![codecov](https://codecov.io/gh/yii-extension/simple-app/branch/master/graph/badge.svg?token=GLO748TP63)](https://codecov.io/gh/yii-extension/simple-app)
 [![static analysis](https://github.com/yii-extension/simple-app/workflows/static%20analysis/badge.svg)](https://github.com/yii-extension/simple-app/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yii-extension/user-view-bootstrap5/coverage.svg)](https://shepherd.dev/github/yii-extension/user-view-bootstrap5)
+[![Open Collective](https://img.shields.io/badge/Open%20Collective-sponsor-7eadf1?logo=open%20collective&logoColor=7eadf1&labelColor=555555)](https://opencollective.com/yiisoft)
 
 ## Directory structure
 
