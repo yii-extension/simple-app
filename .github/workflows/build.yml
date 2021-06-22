@@ -19,6 +19,7 @@ jobs:
         php:
           - "7.4"
           - "8.0"
+          - "8.1"
 
     steps:
       - name: Checkout
@@ -60,7 +61,7 @@ jobs:
           vendor/bin/codecept run --coverage-xml
 
       - name: Upload coverage to codecov
-        if: matrix.os == 'ubuntu-latest' && matrix.php == '7.4'
+        if: matrix.os == 'ubuntu-latest' && matrix.php == '8.0'
         uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
