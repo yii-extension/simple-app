@@ -1,8 +1,8 @@
 on:
-  - pull_request
-  - push
+  schedule:
+    - cron: '0 2 * * *' # run at 2 AM UTC
 
-name: build
+name: build-nightly
 
 jobs:
   tests:
@@ -17,19 +17,19 @@ jobs:
           - windows-latest
 
         php:
-          - 7.4
           - 8.0
+          - 8.1
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
 
-      - name: Install PHP
+      - name: Setup nightly PHP
         uses: shivammathur/setup-php@2.12.0
         with:
-          php-version: ${{ matrix.php }}
-          ini-values: date.timezone='UTC'
-          coverage: pcov
+          php-version: '8.1'
+          extensions: mbstring
+          ini-values: post_max_size=256M, max_execution_time=180
           tools: composer:v2
 
       - name: Determine composer cache directory on Linux
@@ -52,16 +52,9 @@ jobs:
         run: composer self-update
 
       - name: Install dependencies with composer
-        run: composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader --ansi
+        run: composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader --ansi --ignore-platform-reqs
 
       - name: Run tests with codeception
         run: |
           php -S 127.0.0.1:8080 -t public public/index-test.php > ./runtime/yii.log 2>&1 &
-          vendor/bin/codecept run --coverage-xml
-
-      - name: Upload coverage to codecov
-        if: matrix.os == 'ubuntu-latest' && matrix.php == '8.0'
-        uses: codecov/codecov-action@v2.0.1
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          file: tests/_output/coverage.xml
+          vendor/bin/codecept run
