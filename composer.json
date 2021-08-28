@@ -81,6 +81,15 @@
                 "$providers",
                 "config/providers-console.php"
             ],
+            "bootstrap": "config/bootstrap.php",
+            "bootstrap-web": [
+                "$bootstrap",
+                "config/bootstrap-web.php"
+            ],
+            "bootstrap-console": [
+                "$bootstrap",
+                "config/bootstrap-console.php"
+            ],
             "routes": "config/routes.php"
         },
         "installer-types": [

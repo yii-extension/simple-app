@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-use Simple\App\Runner\ApplicationRunner;
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+use Simple\App\Runner\WebApplicationRunner;
 
 // PHP built-in server routing.
 if (PHP_SAPI === 'cli-server') {
@@ -15,12 +17,8 @@ if (PHP_SAPI === 'cli-server') {
     $_SERVER['SCRIPT_NAME'] = '/index.php';
 }
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
-
-$runner = new ApplicationRunner();
-
+$runner = new WebApplicationRunner();
 // Development mode:
 $runner->debug();
-
 // Run application:
 $runner->run();

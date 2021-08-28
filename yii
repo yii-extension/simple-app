@@ -3,13 +3,11 @@
 
 declare(strict_types=1);
 
-use Simple\App\Runner\ApplicationConsoleRunner;
+require_once __DIR__ . '/vendor/autoload.php';
 
-define('YII_ENV', getenv('env') ?? 'production');
+use Simple\App\Runner\ConsoleApplicationRunner;
 
-require_once 'vendor/autoload.php';
-
-$runnerConsole = new ApplicationConsoleRunner();
+$consoleRunner = new ConsoleApplicationRunner();
 
 // Run application:
-$runnerConsole->run();
+$consoleRunner->run();
