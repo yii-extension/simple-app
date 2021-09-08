@@ -34,11 +34,13 @@ use function microtime;
 
 final class WebApplicationRunner
 {
+    private string $configDirectory;
     private bool $debug;
     private ?string $environment;
 
-    public function __construct(bool $debug, ?string $environment)
+    public function __construct(string $configDirectory, bool $debug, ?string $environment)
     {
+        $this->configDirectory = $configDirectory;
         $this->debug = $debug;
         $this->environment = $environment;
     }
@@ -56,7 +58,7 @@ final class WebApplicationRunner
         $this->registerErrorHandler($errorHandler);
 
         $config = new Config(
-            dirname(__DIR__, 2),
+            $this->configDirectory,
             '/config/packages', // Configs path.
             $this->environment,
             [

@@ -18,6 +18,12 @@ if (PHP_SAPI === 'cli-server') {
 }
 
 /**
+ *  In the above points to where configs will be copied to. The path is relative to where is. The option is read for
+ *  the root package, which is typically an application. Default is "/config/packages".
+ */
+define('YII_CONFIG_DIRECTORY', getenv('YII_CONFIG_DIRECTORY') ?: dirname(__DIR__));
+
+/**
  *  Set debug value for web application runner, for default its `true` add additionally the validation of the
  *  container-di configurations (debug mode).
  */
@@ -31,5 +37,5 @@ define('YII_DEBUG', getenv('YII_DEBUG') ?: true);
 define('YII_ENV', getenv('YII_ENV') ?: null);
 
 // Run web application runner
-$runner = new WebApplicationRunner(YII_DEBUG, YII_ENV);
+$runner = new WebApplicationRunner(YII_CONFIG_DIRECTORY, YII_DEBUG, YII_ENV);
 $runner->run();
