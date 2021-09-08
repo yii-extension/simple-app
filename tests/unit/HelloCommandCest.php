@@ -11,6 +11,7 @@ use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Tester\CommandTester;
 use Yiisoft\Config\Config;
 use Yiisoft\Di\Container;
+use Yiisoft\Yii\Console\ExitCode;
 
 final class HelloCest
 {
@@ -44,7 +45,7 @@ final class HelloCest
 
         $commandCreate->setInputs(['yes']);
 
-        $I->assertEquals(1, $commandCreate->execute([]));
+        $I->assertEquals(ExitCode::OK, $commandCreate->execute([]));
 
         $output = $commandCreate->getDisplay(true);
 
