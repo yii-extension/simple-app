@@ -10,6 +10,7 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Tester\CommandTester;
 use Yiisoft\Config\Config;
+use Yiisoft\Config\ConfigPaths;
 use Yiisoft\Di\Container;
 use Yiisoft\Yii\Console\ExitCode;
 
@@ -55,8 +56,7 @@ final class HelloCest
     private function getConfig(): Config
     {
         return new Config(
-            dirname(__DIR__, 2),
-            '/config/packages', // Configs path.
+            new ConfigPaths(dirname(__DIR__, 2)),
             null,
             [
                 'params',
