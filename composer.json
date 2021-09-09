@@ -13,7 +13,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "nyholm/psr7": "^1.3.0",
-        "yiisoft/config": "^1.0@dev",
+        "yiisoft/config": "dev-alternative-implementation",
         "yiisoft/csrf": "^1.0.0",
         "yiisoft/data-response": "^1.0.0",
         "yiisoft/definitions": "3.0.x-dev",
@@ -55,53 +55,53 @@
             "force-check": true
         },
         "config-plugin": {
-            "common": "config/common/*.php",
-            "params": "config/params.php",
+            "common": "common/*.php",
+            "params": "params.php",
             "web": [
                 "$common",
-                "config/web/*.php"
+                "web/*.php"
             ],
             "console": [
                 "$common",
-                "config/console/*.php"
+                "console/*.php"
             ],
-            "events": "config/events.php",
+            "events": "events.php",
             "events-web": [
                 "$events",
-                "config/events-web.php"
+                "events-web.php"
             ],
             "events-console": [
                 "$events",
-                "config/events-console.php"
+                "events-console.php"
             ],
-            "providers": "config/providers.php",
+            "providers": "providers.php",
             "providers-web": [
                 "$providers",
-                "config/providers-web.php"
+                "providers-web.php"
             ],
             "providers-console": [
                 "$providers",
-                "config/providers-console.php"
+                "providers-console.php"
             ],
-            "delegates": "config/delegates.php",
+            "delegates": "delegates.php",
             "delegates-web": [
                 "$delegates",
-                "config/delegates-web.php"
+                "delegates-web.php"
             ],
             "delegates-console": [
                 "$delegates",
-                "config/delegates-console.php"
+                "delegates-console.php"
             ],
-            "bootstrap": "config/bootstrap.php",
+            "bootstrap": "bootstrap.php",
             "bootstrap-web": [
                 "$bootstrap",
-                "config/bootstrap-web.php"
+                "bootstrap-web.php"
             ],
             "bootstrap-console": [
                 "$bootstrap",
-                "config/bootstrap-console.php"
+                "bootstrap-console.php"
             ],
-            "routes": "config/routes.php"
+            "routes": "routes.php"
         },
         "installer-types": [
             "npm-asset"

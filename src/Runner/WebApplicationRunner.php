@@ -12,6 +12,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Simple\App\Handler\ThrowableHandler;
 use Throwable;
 use Yiisoft\Config\Config;
+use Yiisoft\Config\ConfigPaths;
 use Yiisoft\Definitions\Exception\CircularReferenceException;
 use Yiisoft\Definitions\Exception\InvalidConfigException;
 use Yiisoft\Definitions\Exception\NotFoundException;
@@ -58,8 +59,7 @@ final class WebApplicationRunner
         $this->registerErrorHandler($errorHandler);
 
         $config = new Config(
-            $this->configDirectory,
-            '/config/packages', // Configs path.
+            new ConfigPaths($this->configDirectory),
             $this->environment,
             [
                 'params',
@@ -120,7 +120,7 @@ final class WebApplicationRunner
 
     private function createTemporaryErrorHandler(): ErrorHandler
     {
-        $logger = new Logger([new FileTarget(dirname(__DIR__) . '/runtime/logs/app.log')]);
+        $logger = new Logger([new FileTarget(dirname(__DIR__) . dirname(__DIR__, 2) . '/runtime/logs/app.log')]);
         return new ErrorHandler($logger, new HtmlRenderer());
     }
 

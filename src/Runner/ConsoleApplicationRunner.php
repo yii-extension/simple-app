@@ -9,6 +9,7 @@ use ErrorException;
 use Exception;
 use Psr\Container\ContainerInterface;
 use Yiisoft\Config\Config;
+use Yiisoft\Config\ConfigPaths;
 use Yiisoft\Definitions\Exception\CircularReferenceException;
 use Yiisoft\Definitions\Exception\InvalidConfigException;
 use Yiisoft\Definitions\Exception\NotFoundException;
@@ -35,8 +36,7 @@ final class ConsoleApplicationRunner
     public function run(): void
     {
         $config = new Config(
-            dirname(__DIR__, 2),
-            '/config/packages', // Configs path.
+            new ConfigPaths($this->configDirectory),
             $this->environment,
             [
                 'params',
