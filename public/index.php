@@ -19,7 +19,7 @@ if (PHP_SAPI === 'cli-server') {
 
 /**
  *  In the above points to where configs will be copied to. The path is relative to where is. The option is read for
- *  the root package, which is typically an application. Default is "/config/packages".
+ *  the root package, which is typically an application. Default is "/config".
  */
 define('YII_CONFIG_DIRECTORY', getenv('YII_CONFIG_DIRECTORY') ?: dirname(__DIR__));
 

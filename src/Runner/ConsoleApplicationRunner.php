@@ -20,11 +20,13 @@ use Yiisoft\Yii\Console\Output\ConsoleBufferedOutput;
 
 final class ConsoleApplicationRunner
 {
+    private string $configDirectory;
     private bool $debug;
     private ?string $environment;
 
-    public function __construct(bool $debug, ?string $environment)
+    public function __construct(string $configDirectory, bool $debug, ?string $environment)
     {
+        $this->configDirectory = $configDirectory;
         $this->debug = $debug;
         $this->environment = $environment;
     }
