@@ -61,6 +61,10 @@ jobs:
           sed -i "6 a require_once dirname(__DIR__) . '/C3.php';" public/index.php
           php -S 127.0.0.1:8080 -t public public/index.php > ./runtime/yii.log 2>&1 &
           vendor/bin/codecept run --coverage-xml
+
+      - name: cat errors
+        run: |
+          cat ./runtime/yii.log
           cat /home/runner/work/simple-app/simple-app/tests/_output/App.Tests.Acceptance.ErrorCest.testErrorPage.fail.html
 
       - name: Upload coverage to codecov
