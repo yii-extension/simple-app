@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Simple\App\Runner\ConsoleApplicationRunner;
+use Yiisoft\Yii\Runner\Console\ConsoleApplicationRunner;
 
 /**
  *  In the above points to where configs will be copied to. The path is relative to where is. The option is read for
