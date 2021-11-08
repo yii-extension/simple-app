@@ -1,6 +1,8 @@
 on:
-  - pull_request
-  - push
+  pull_request:
+  push:
+  schedule:
+    - cron: '0 2 * * *' # run at 2 AM UTC
 
 name: build
 
@@ -17,15 +19,15 @@ jobs:
           - windows-latest
 
         php:
-          - 7.4
           - 8.0
+          - 8.1
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
 
       - name: Install PHP
-        uses: shivammathur/setup-php@2.15.0
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           ini-values: date.timezone='UTC'
@@ -41,7 +43,7 @@ jobs:
         run: echo "COMPOSER_CACHE_DIR=~\AppData\Local\Composer" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Cache dependencies installed with composer
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2
         with:
           path: ${{ env.COMPOSER_CACHE_DIR }}
           key: php${{ matrix.php }}-composer-${{ hashFiles('**/composer.json') }}
@@ -54,14 +56,19 @@ jobs:
       - name: Install dependencies with composer
         run: composer update --prefer-dist --no-interaction --no-progress --optimize-autoloader --ansi
 
+      - name: Add C3.php to index.php
+        run: |
+          sed -i "5 a require_once dirname(__DIR__) . '/c3.php';" public/index.php
+          cat public/index.php
+
       - name: Run tests with codeception
         run: |
-          php -S 127.0.0.1:8080 -t public public/index-test.php > ./runtime/yii.log 2>&1 &
+          php -S 127.0.0.1:8080 -t public public/index.php > ./runtime/yii.log 2>&1 &
           vendor/bin/codecept run --coverage-xml
 
       - name: Upload coverage to codecov
         if: matrix.os == 'ubuntu-latest' && matrix.php == '8.0'
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: tests/_output/coverage.xml

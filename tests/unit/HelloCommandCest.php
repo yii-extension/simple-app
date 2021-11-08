@@ -11,6 +11,8 @@ use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Tester\CommandTester;
 use Yiisoft\Config\Config;
 use Yiisoft\Config\ConfigPaths;
+use Yiisoft\Config\Modifier\RecursiveMerge;
+use Yiisoft\Config\Modifier\ReverseMerge;
 use Yiisoft\Di\Container;
 use Yiisoft\Yii\Console\ExitCode;
 
@@ -55,14 +57,18 @@ final class HelloCest
 
     private function getConfig(): Config
     {
+        $eventGroups = [
+            'events',
+            'events-web',
+            'events-console',
+        ];
+
         return new Config(
-            new ConfigPaths(dirname(__DIR__, 2)),
+            new ConfigPaths(dirname(__DIR__, 2), 'config'),
             null,
             [
-                'params',
-                'events',
-                'events-web',
-                'events-console',
+                ReverseMerge::groups(...$eventGroups),
+                RecursiveMerge::groups('params', ...$eventGroups),
             ],
         );
     }
