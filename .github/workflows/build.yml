@@ -58,7 +58,7 @@ jobs:
 
       - name: Add C3.php to index.php
         run: |
-          sed -i "5 a require_once dirname(__DIR__) . '/C3.php';" public/index.php
+          sed -i "5 a require_once dirname(__DIR__) . '/c3.php';" public/index.php
           cat public/index.php
 
       - name: Run tests with codeception
@@ -70,7 +70,7 @@ jobs:
       - uses: pCYSl5EDgo/cat@master
         id: tests
         with:
-          path: /home/runner/work/simple-app/simple-app/tests/_output/App.Tests.Acceptance.ErrorCest.testErrorPage.fail.html
+          path: tests/_output/App.Tests.Acceptance.ErrorCest.testErrorPage.fail.html
 
       - name: cat errors
         run: |
