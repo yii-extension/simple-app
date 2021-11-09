@@ -18,7 +18,7 @@
         "yiisoft/data-response": "^1.0.0",
         "yiisoft/definitions": "^3.0",
         "yiisoft/di": "^3.0",
-        "yiisoft/error-handler": "^1.0",
+        "yiisoft/error-handler": "^2.0",
         "yiisoft/event-dispatcher": "^1.0",
         "yiisoft/i18n": "^1.0",
         "yiisoft/log-target-file": "^1.0",
