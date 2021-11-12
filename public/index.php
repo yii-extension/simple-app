@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-use Yiisoft\Yii\Runner\Web\WebApplicationRunner;
+use Yiisoft\Yii\Runner\Http\HttpApplicationRunner;
 
 // PHP built-in server routing.
 if (PHP_SAPI === 'cli-server') {
@@ -39,5 +39,5 @@ define('YII_DEBUG', getenv('YII_DEBUG') ?: true);
 define('YII_ENV', getenv('YII_ENV') ?: null);
 
 // Run web application runner
-$runner = new WebApplicationRunner(YII_CONFIG_DIRECTORY, YII_DEBUG, YII_ENV);
+$runner = new HttpApplicationRunner(YII_CONFIG_DIRECTORY, YII_DEBUG, YII_ENV);
 $runner->run();
