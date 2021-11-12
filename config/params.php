@@ -28,7 +28,6 @@ return [
             SessionMiddleware::class,
             Router::class,
         ],
-        'notFoundHandler' => null,
     ],
 
     'yiisoft/yii-console' => [
