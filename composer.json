@@ -28,8 +28,7 @@
         "yiisoft/yii-console": "^1.0",
         "yiisoft/yii-http": "@dev",
         "yiisoft/yii-runner-console": "@dev",
-        "yiisoft/yii-runner-http": "@dev",
-        "yiisoft/yii-web": "^3.0"
+        "yiisoft/yii-runner-http": "@dev"
     },
     "require-dev": {
         "codeception/c3": "^2.6.0",
