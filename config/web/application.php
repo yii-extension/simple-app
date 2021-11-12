@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Simple\App\Handler\NotFoundHandler;
 use Yiisoft\Definitions\DynamicReference;
 use Yiisoft\Definitions\Reference;
 use Yiisoft\Injector\Injector;
@@ -17,7 +18,9 @@ return [
                 return ($injector->make(MiddlewareDispatcher::class))
                     ->withMiddlewares($params['yiisoft/yii/http']['middlewares']);
             }),
-            'fallbackHandler' => Reference::to($params['yiisoft/yii/http']['notFoundHandler']),
+            'fallbackHandler' => Reference::to(
+                $params['yiisoft/yii/http']['notFoundHandler'] ?? NotFoundHandler::class,
+            ),
         ],
     ],
 ];

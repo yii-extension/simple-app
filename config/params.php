@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Simple\App\Command\HelloCommand;
-use Simple\App\Handler\NotFoundHandler;
 use Yiisoft\ErrorHandler\Middleware\ErrorCatcher;
 use Yiisoft\Router\Middleware\Router;
 use Yiisoft\Session\SessionMiddleware;
@@ -29,7 +28,7 @@ return [
             SessionMiddleware::class,
             Router::class,
         ],
-        'notFoundHandler' => NotFoundHandler::class,
+        'notFoundHandler' => null,
     ],
 
     'yiisoft/yii-console' => [
