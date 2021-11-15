@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+use Yiisoft\Config\Config;
+use Yiisoft\Config\ConfigPaths;
+use Yiisoft\Config\Modifier\RecursiveMerge;
+use Yiisoft\Config\Modifier\ReverseMerge;
 use Yiisoft\Yii\Runner\Http\HttpApplicationRunner;
 
 // PHP built-in server routing.
@@ -38,6 +42,16 @@ define('YII_DEBUG', getenv('YII_DEBUG') ?: true);
  */
 define('YII_ENV', getenv('YII_ENV') ?: null);
 
+$config = new Config(
+    new ConfigPaths(YII_CONFIG_DIRECTORY, 'config'),
+    YII_ENV,
+    [
+        ReverseMerge::groups('routes', 'events', 'events-web', 'events-console'),
+        RecursiveMerge::groups('params', 'events', 'events-web', 'events-console'),
+    ],
+);
+
 // Run web application runner
-$runner = new HttpApplicationRunner(YII_CONFIG_DIRECTORY, YII_DEBUG, YII_ENV);
-$runner->run();
+$runner = (new HttpApplicationRunner(YII_CONFIG_DIRECTORY, YII_DEBUG, YII_ENV))
+    ->withConfig($config)
+    ->run();
