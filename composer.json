@@ -103,7 +103,8 @@
                 "$bootstrap",
                 "bootstrap-console.php"
             ],
-            "routes": "routes.php"
+            "routes": "routes.php",
+            "widgets": "widgets.php"
         },
         "installer-types": [
             "npm-asset"
