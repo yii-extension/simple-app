@@ -46,8 +46,8 @@ $config = new Config(
     new ConfigPaths(YII_CONFIG_DIRECTORY, 'config'),
     YII_ENV,
     [
-        ReverseMerge::groups('routes', 'events', 'events-web', 'events-console'),
-        RecursiveMerge::groups('params', 'events', 'events-web', 'events-console'),
+        ReverseMerge::groups('events', 'events-web', 'events-console', 'routes', 'widgets'),
+        RecursiveMerge::groups('events', 'events-web', 'events-console', 'params'),
     ],
 );
 
