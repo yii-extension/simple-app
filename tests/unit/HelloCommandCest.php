@@ -14,7 +14,9 @@ use Yiisoft\Config\ConfigPaths;
 use Yiisoft\Config\Modifier\RecursiveMerge;
 use Yiisoft\Config\Modifier\ReverseMerge;
 use Yiisoft\Di\Container;
+use Yiisoft\Di\ContainerConfig;
 use Yiisoft\Yii\Console\ExitCode;
+use Yiisoft\Yii\Runner\ConfigFactory;
 
 final class HelloCest
 {
@@ -25,8 +27,9 @@ final class HelloCest
         $config = $this->getConfig();
 
         $this->container = new Container(
-            $config->get('console'),
-            $config->get('providers-console'),
+            ContainerConfig::create()
+                ->withDefinitions($config->get('console'))
+                ->withProviders($config->get('providers'))
         );
     }
 
@@ -57,19 +60,6 @@ final class HelloCest
 
     private function getConfig(): Config
     {
-        $eventGroups = [
-            'events',
-            'events-web',
-            'events-console',
-        ];
-
-        return new Config(
-            new ConfigPaths(dirname(__DIR__, 2), 'config'),
-            null,
-            [
-                ReverseMerge::groups(...$eventGroups),
-                RecursiveMerge::groups('params', ...$eventGroups),
-            ],
-        );
+        return ConfigFactory::create(new ConfigPaths(dirname(__DIR__, 2), 'config'), null);
     }
 }

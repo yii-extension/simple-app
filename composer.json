@@ -16,15 +16,15 @@
         "yiisoft/aliases": "^2.0",
         "yiisoft/config": "^1.0",
         "yiisoft/csrf": "^1.0",
-        "yiisoft/data-response": "^1.0.0",
-        "yiisoft/definitions": "^3.0",
-        "yiisoft/di": "^3.0",
+        "yiisoft/data-response": "^1.0",
+        "yiisoft/definitions": "^1.0",
+        "yiisoft/di": "^1.0",
         "yiisoft/error-handler": "^2.0",
         "yiisoft/event-dispatcher": "^1.0",
         "yiisoft/i18n": "^1.0",
         "yiisoft/log-target-file": "^1.0",
         "yiisoft/log": "^1.0",
-        "yiisoft/router-fastroute": "^3.0",
+        "yiisoft/router-fastroute": "^1.0",
         "yiisoft/session": "^1.0",
         "yiisoft/yii-console": "^1.0",
         "yiisoft/yii-http": "@dev",
@@ -116,7 +116,14 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": false,
+            "yiisoft/config": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "codeception/c3": true
+        }
     },
     "repositories": [
         {
