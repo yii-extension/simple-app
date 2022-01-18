@@ -27,9 +27,9 @@
         "yiisoft/router-fastroute": "^1.0",
         "yiisoft/session": "^1.0",
         "yiisoft/yii-console": "^1.0",
-        "yiisoft/yii-http": "@dev",
-        "yiisoft/yii-runner-console": "@dev",
-        "yiisoft/yii-runner-http": "@dev"
+        "yiisoft/yii-http": "^1.0",
+        "yiisoft/yii-runner-console": "^1.0",
+        "yiisoft/yii-runner-http": "^1.0"
     },
     "require-dev": {
         "codeception/c3": "^2.6.0",
@@ -116,14 +116,7 @@
         }
     },
     "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "composer/package-versions-deprecated": false,
-            "yiisoft/config": true,
-            "composer/installers": true,
-            "oomphinc/composer-installers-extender": true,
-            "codeception/c3": true
-        }
+        "sort-packages": true
     },
     "repositories": [
         {
