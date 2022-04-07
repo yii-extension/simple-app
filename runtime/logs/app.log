@@ -1,0 +1,96 @@
+2022-04-07 18:52:10.199400 [error][application] Yiisoft\Di\NotFoundException with message 'No definition or class found or resolvable for "Simple\App\Handler\NotFoundHandler" while building "Simple\App\Handler\NotFoundHandler".' 
+
+in D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php:541
+
+Stack trace:
+#0 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(503): Yiisoft\Di\Container->buildInternal('Simple\\App\\Hand...')
+#1 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(153): Yiisoft\Di\Container->build('Simple\\App\\Hand...')
+#2 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\Reference.php(52): Yiisoft\Di\Container->get('Simple\\App\\Hand...')
+#3 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\Helpers\DefinitionResolver.php(66): Yiisoft\Definitions\Reference->resolve(Object(Yiisoft\Di\Container))
+#4 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\Helpers\DefinitionResolver.php(46): Yiisoft\Definitions\Helpers\DefinitionResolver::resolve(Object(Yiisoft\Di\Container), NULL, Object(Yiisoft\Definitions\Reference))
+#5 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\ArrayDefinition.php(145): Yiisoft\Definitions\Helpers\DefinitionResolver::resolveArray(Object(Yiisoft\Di\Container), NULL, Array)
+#6 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(538): Yiisoft\Definitions\ArrayDefinition->resolve(Object(Yiisoft\Di\Container))
+#7 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(503): Yiisoft\Di\Container->buildInternal('Yiisoft\\Yii\\Htt...')
+#8 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(153): Yiisoft\Di\Container->build('Yiisoft\\Yii\\Htt...')
+#9 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\yii-runner-http\src\HttpApplicationRunner.php(92): Yiisoft\Di\Container->get('Yiisoft\\Yii\\Htt...')
+#10 D:\GitHub\yii-extension\simple-app\public\index.php(57): Yiisoft\Yii\Runner\Http\HttpApplicationRunner->run()
+#11 {main}
+
+Message context:
+
+throwable: Yiisoft\Di\NotFoundException: No definition or class found or resolvable for "Simple\App\Handler\NotFoundHandler" while building "Simple\App\Handler\NotFoundHandler". in D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php:541
+Stack trace:
+#0 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(503): Yiisoft\Di\Container->buildInternal('Simple\\App\\Hand...')
+#1 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(153): Yiisoft\Di\Container->build('Simple\\App\\Hand...')
+#2 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\Reference.php(52): Yiisoft\Di\Container->get('Simple\\App\\Hand...')
+#3 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\Helpers\DefinitionResolver.php(66): Yiisoft\Definitions\Reference->resolve(Object(Yiisoft\Di\Container))
+#4 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\Helpers\DefinitionResolver.php(46): Yiisoft\Definitions\Helpers\DefinitionResolver::resolve(Object(Yiisoft\Di\Container), NULL, Object(Yiisoft\Definitions\Reference))
+#5 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\definitions\src\ArrayDefinition.php(145): Yiisoft\Definitions\Helpers\DefinitionResolver::resolveArray(Object(Yiisoft\Di\Container), NULL, Array)
+#6 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(538): Yiisoft\Definitions\ArrayDefinition->resolve(Object(Yiisoft\Di\Container))
+#7 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(503): Yiisoft\Di\Container->buildInternal('Yiisoft\\Yii\\Htt...')
+#8 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\di\src\Container.php(153): Yiisoft\Di\Container->build('Yiisoft\\Yii\\Htt...')
+#9 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\yii-runner-http\src\HttpApplicationRunner.php(92): Yiisoft\Di\Container->get('Yiisoft\\Yii\\Htt...')
+#10 D:\GitHub\yii-extension\simple-app\public\index.php(57): Yiisoft\Yii\Runner\Http\HttpApplicationRunner->run()
+#11 {main}
+time: 1649357530.199447
+memory: 3505136
+category: 'application'
+
+2022-04-07 18:52:49.547400 [error][application] Yiisoft\Middleware\Dispatcher\InvalidMiddlewareDefinitionException with message 'Parameter should be either PSR middleware class name or a callable. Got ["Simple\App\Action\HomeAction", "run"].' 
+
+in D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareFactory.php:153
+
+Stack trace:
+#0 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareFactory.php(51): Yiisoft\Middleware\Dispatcher\MiddlewareFactory->validateMiddleware(Array)
+#1 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareDispatcher.php(102): Yiisoft\Middleware\Dispatcher\MiddlewareFactory->create(Array)
+#2 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(96): Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher::Yiisoft\Middleware\Dispatcher\{closure}()
+#3 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\data-response\src\Middleware\FormatDataResponse.php(29): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#4 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\DataResponse\Middleware\FormatDataResponse->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#5 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\csrf\src\CsrfMiddleware.php(48): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#6 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\Csrf\CsrfMiddleware->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#7 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(53): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#8 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareDispatcher.php(50): Yiisoft\Middleware\Dispatcher\MiddlewareStack->handle(Object(Nyholm\Psr7\ServerRequest))
+#9 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\router\src\MatchingResult.php(116): Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher->dispatch(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#10 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\router\src\Middleware\Router.php(61): Yiisoft\Router\MatchingResult->process(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#11 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\Router\Middleware\Router->process(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#12 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\session\src\SessionMiddleware.php(36): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#13 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\Session\SessionMiddleware->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#14 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\error-handler\src\Middleware\ErrorCatcher.php(135): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#15 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\ErrorHandler\Middleware\ErrorCatcher->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#16 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(53): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#17 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareDispatcher.php(50): Yiisoft\Middleware\Dispatcher\MiddlewareStack->handle(Object(Nyholm\Psr7\ServerRequest))
+#18 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\yii-http\src\Application.php(87): Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher->dispatch(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#19 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\yii-runner-http\src\HttpApplicationRunner.php(103): Yiisoft\Yii\Http\Application->handle(Object(Nyholm\Psr7\ServerRequest))
+#20 D:\GitHub\yii-extension\simple-app\public\index.php(57): Yiisoft\Yii\Runner\Http\HttpApplicationRunner->run()
+#21 {main}
+
+Message context:
+
+throwable: Yiisoft\Middleware\Dispatcher\InvalidMiddlewareDefinitionException: Parameter should be either PSR middleware class name or a callable. Got ["Simple\App\Action\HomeAction", "run"]. in D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareFactory.php:153
+Stack trace:
+#0 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareFactory.php(51): Yiisoft\Middleware\Dispatcher\MiddlewareFactory->validateMiddleware(Array)
+#1 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareDispatcher.php(102): Yiisoft\Middleware\Dispatcher\MiddlewareFactory->create(Array)
+#2 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(96): Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher::Yiisoft\Middleware\Dispatcher\{closure}()
+#3 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\data-response\src\Middleware\FormatDataResponse.php(29): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#4 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\DataResponse\Middleware\FormatDataResponse->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#5 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\csrf\src\CsrfMiddleware.php(48): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#6 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\Csrf\CsrfMiddleware->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#7 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(53): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#8 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareDispatcher.php(50): Yiisoft\Middleware\Dispatcher\MiddlewareStack->handle(Object(Nyholm\Psr7\ServerRequest))
+#9 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\router\src\MatchingResult.php(116): Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher->dispatch(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#10 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\router\src\Middleware\Router.php(61): Yiisoft\Router\MatchingResult->process(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#11 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\Router\Middleware\Router->process(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#12 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\session\src\SessionMiddleware.php(36): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#13 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\Session\SessionMiddleware->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#14 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\error-handler\src\Middleware\ErrorCatcher.php(135): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#15 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(104): Yiisoft\ErrorHandler\Middleware\ErrorCatcher->process(Object(Nyholm\Psr7\ServerRequest), Object(Psr\Http\Server\RequestHandlerInterface@anonymous))
+#16 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareStack.php(53): Psr\Http\Server\RequestHandlerInterface@anonymous->handle(Object(Nyholm\Psr7\ServerRequest))
+#17 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\middleware-dispatcher\src\MiddlewareDispatcher.php(50): Yiisoft\Middleware\Dispatcher\MiddlewareStack->handle(Object(Nyholm\Psr7\ServerRequest))
+#18 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\yii-http\src\Application.php(87): Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher->dispatch(Object(Nyholm\Psr7\ServerRequest), Object(App\Handler\NotFoundHandler))
+#19 D:\GitHub\yii-extension\simple-app\vendor\yiisoft\yii-runner-http\src\HttpApplicationRunner.php(103): Yiisoft\Yii\Http\Application->handle(Object(Nyholm\Psr7\ServerRequest))
+#20 D:\GitHub\yii-extension\simple-app\public\index.php(57): Yiisoft\Yii\Runner\Http\HttpApplicationRunner->run()
+#21 {main}
+time: 1649357569.547396
+memory: 4505056
+category: 'application'
+

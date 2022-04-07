@@ -1,4 +1,5 @@
 actor: CliTester
+suite_namespace: App\Tests\Cli
 modules:
-    enabled:
-        - Cli
+    # enable helpers as array
+    enabled: [Cli]

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simple\App\Action\HomeAction;
+use App\Action\HomeAction;
 use Yiisoft\Router\Route;
 
 return [

@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-namespace Simple\App\Tests;
+namespace App\Tests\Support;
 
 /**
  * Inherited Methods
@@ -18,9 +18,9 @@ namespace Simple\App\Tests;
  *
  * @SuppressWarnings(PHPMD)
 */
-class UnitTester extends \Codeception\Actor
+class CliTester extends \Codeception\Actor
 {
-    use _generated\UnitTesterActions;
+    use _generated\CliTesterActions;
 
     /**
      * Define custom actions here

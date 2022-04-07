@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Simple\App\Tests\Cli;
+namespace App\Tests\Cli;
 
-use Simple\App\Tests\CliTester;
+use App\Tests\Support\CliTester;
 
 final class ConsoleCest
 {

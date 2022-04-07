@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simple\App\Action;
+namespace App\Action;
 
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
