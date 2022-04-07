@@ -11,14 +11,12 @@ use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Tester\CommandTester;
 use Yiisoft\Config\Config;
 use Yiisoft\Config\ConfigPaths;
-use Yiisoft\Config\Modifier\RecursiveMerge;
-use Yiisoft\Config\Modifier\ReverseMerge;
 use Yiisoft\Di\Container;
 use Yiisoft\Di\ContainerConfig;
 use Yiisoft\Yii\Console\ExitCode;
 use Yiisoft\Yii\Runner\ConfigFactory;
 
-final class HelloCest
+final class HelloCommandCest
 {
     private ContainerInterface $container;
 
