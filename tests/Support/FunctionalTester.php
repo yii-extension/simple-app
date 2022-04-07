@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-namespace Simple\App\Tests;
+namespace App\Tests\Support;
 
 /**
  * Inherited Methods

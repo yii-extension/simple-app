@@ -33,7 +33,7 @@
     },
     "require-dev": {
         "codeception/c3": "^2.6.0",
-        "codeception/codeception": "^4.1",
+        "codeception/codeception": "^5.0",
         "codeception/module-asserts": "^2.0",
         "codeception/module-cli": "^2.0",
         "codeception/module-phpbrowser": "^2.0",
@@ -41,12 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Simple\\App\\": "src"
+            "App\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Simple\\App\\Tests\\": "tests"
+            "App\\Tests\\": "tests"
         }
     },
     "extra": {
@@ -103,25 +103,14 @@
                 "$bootstrap",
                 "bootstrap-console.php"
             ],
-            "routes": "routes.php",
-            "widgets": "widgets.php"
-        },
-        "installer-types": [
-            "npm-asset"
-        ],
-        "installer-paths": {
-            "./node_modules/{$name}": [
-                "type:npm-asset"
-            ]
+            "routes": "routes.php"
         }
     },
     "config": {
-        "sort-packages": true
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
+        "sort-packages": true,
+        "allow-plugins": {
+            "yiisoft/config": true,
+            "codeception/c3": true
         }
-    ]
+    }
 }

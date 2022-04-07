@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Simple\App\Command\HelloCommand;
+use App\Command\HelloCommand;
 use Yiisoft\ErrorHandler\Middleware\ErrorCatcher;
 use Yiisoft\Router\Middleware\Router;
 use Yiisoft\Session\SessionMiddleware;
@@ -19,6 +19,7 @@ return [
             '@runtime' => '@root/runtime',
             '@translations' => '@root/storage/translations',
             '@vendor' => '@root/vendor',
+            '@widget' => '@root/config/widget',
         ],
     ],
 
