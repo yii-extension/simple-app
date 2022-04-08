@@ -36,7 +36,7 @@
         "codeception/codeception": "^5.0",
         "codeception/module-asserts": "^2.0",
         "codeception/module-cli": "^2.0",
-        "codeception/module-phpbrowser": "^2.0",
+        "codeception/module-phpbrowser": "^3.0",
         "vimeo/psalm": "^4.7"
     },
     "autoload": {
